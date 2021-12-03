@@ -5,10 +5,9 @@ public class Organization {
     private String name;
 
 
-    public Organization(String nit, String name, String type) {
+    public Organization(String nit, String name) {
         this.nit = nit;
         this.name = name;
-
     }
 
     public String getNit() {

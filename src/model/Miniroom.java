@@ -4,7 +4,8 @@ public class Miniroom {
 
     private int idNum;
     private Organization organization;
-    private Server[] servers;
+    private static Server[] servers;
+
 
 
 
@@ -39,9 +40,12 @@ public class Miniroom {
         this.organization = organization;
     }
 
-    public void addServer(){
 
-
-
+    public static void addServer(Server server){
+        for (int i = 0; i < servers.length; i++) {
+            if(servers[i] == null){
+                servers[i] = server;
+            }
+        }
     }
 }

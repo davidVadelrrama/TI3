@@ -2,29 +2,30 @@ package model;
 
 public class Server {
 
-    public OnOff status;
-    private String cacheMemory;
+
+    private int cacheMemory;
     private int processorNum;
     private int cantRAM;
     private int cantHardDrive;
-    private String hardDriveCapacity;
-    private Processor processorType;
+    private int hardDriveCapacity;
+    private String processor;
 
     //constructor
-    public Server(String cacheMemory, int processorNum, int cantHardDrive, int cantRAM, String hardDriveCapacity) {
+    public Server(int cacheMemory, int processorNum, String processor, int cantRAM, int hardDriveCapacity, int cantHardDrive) {
         this.cacheMemory = cacheMemory;
         this.processorNum = processorNum;
         this.cantHardDrive = cantHardDrive;
         this.cantRAM = cantRAM;
         this.hardDriveCapacity = hardDriveCapacity;
+        this.processor = processor;
     }
 
     //getters y setters
-    public String getCacheMemory() {
+    public int getCacheMemory() {
         return cacheMemory;
     }
 
-    public void setCacheMemory(String cacheMemory) {
+    public void setCacheMemory(int cacheMemory) {
         this.cacheMemory = cacheMemory;
     }
 
@@ -36,13 +37,6 @@ public class Server {
         this.processorNum = processorNum;
     }
 
-    public OnOff getStatus() {
-        return status;
-    }
-
-    public void setStatus(OnOff status) {
-        this.status = status;
-    }
 
     public int getCantRAM() {
         return cantRAM;
@@ -60,11 +54,19 @@ public class Server {
         this.cantHardDrive = cantHardDrive;
     }
 
-    public String getHardDriveCapacity() {
+    public int getHardDriveCapacity() {
         return hardDriveCapacity;
     }
 
-    public void setHardDriveCapacity(String hardDriveCapacity) {
+    public void setHardDriveCapacity(int hardDriveCapacity) {
         this.hardDriveCapacity = hardDriveCapacity;
+    }
+
+    public String getProcessor() {
+        return processor;
+    }
+
+    public void setProcessor(String processor) {
+        this.processor = processor;
     }
 }
