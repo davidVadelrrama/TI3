@@ -72,7 +72,7 @@ public class Controladora {
         }
 
     }
-    public void simulacionEncendidoApagado(){
+    public void simulacionEncendido(){
         for (int i = 0; i < rooms.length; i++) {
             for (int j = 0; j < rooms[0].length; j++) {
                 if(rooms[i][j] == null){
@@ -80,6 +80,59 @@ public class Controladora {
                 }else{
                     System.out.print("[on]");
                 }
+            }
+            System.out.println("");
+        }
+    }
+
+    public void simularApagadoLetraL(){
+        for (int i = 0; i < rooms.length; i++) {
+            for (int j = 0; j < rooms[0].length; j++) {
+                if (i == 0 || j == 0 ) {
+                    System.out.print("[off]");
+                }else {
+                    System.out.print("[on]");
+                }
+
+
+            }
+            System.out.println("");
+        }
+
+    }
+    public void simularApagadoLetraZ(){
+        int cont = 7, temp = 0, temp2 = 1;
+        for (int i = rooms.length; i >= 0; i--) {
+            for (int j = rooms[0].length; j >= 0; j--) {
+                if (i == 0 || i == rooms.length) {
+                    System.out.print("[off]");
+                }else if (j == (cont)){
+                    System.out.print("[off]");
+                    cont--;
+                    if (cont == temp){
+                        temp = (temp + 7);
+                        cont = temp+7;
+                    }
+                }else{
+                    System.out.print("[on]");
+                }
+
+
+            }
+            System.out.println("");
+        }
+
+    }
+
+    public void simularApagadoLetraO(){
+        for (int i = 0; i <= rooms.length; i++) {
+            for (int j = 0; j <= rooms[0].length; j++) {
+                if (i == 0 || i == rooms.length || j == 0 ||  j == rooms[0].length) {
+                    System.out.print("[off]");
+                }else {
+                    System.out.print("[on]");
+                }
+
 
             }
             System.out.println("");

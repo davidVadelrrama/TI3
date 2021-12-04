@@ -69,9 +69,11 @@ public class Main{
 				controladora.mostrarMapa();
 				break;
 			case 5:
-				controladora.simulacionEncendidoApagado();
+				controladora.simulacionEncendido();
 				break;
 			case 6:
+				menu3();
+				break;
 
 
 		}
@@ -103,7 +105,7 @@ public class Main{
 	}
 
 	public static void menu3(){
-		System.out.print("1. simulate turn off by letter L" +
+		System.out.println("1. simulate turn off by letter L" +
 				"\n2. simulate turn off by letter Z" +
 				"\n3. simulate turn off by letter H" +
 				"\n4. simulate turn off by letter O" +
@@ -116,12 +118,15 @@ public class Main{
 	public static void switchMenu3(int option){
 		switch (option){
 			case 1:
+				controladora.simularApagadoLetraL();
 				break;
 			case 2:
+				controladora.simularApagadoLetraZ();
 				break;
 			case 3:
 				break;
 			case 4:
+				controladora.simularApagadoLetraO();
 				break;
 			case 5:
 				break;
