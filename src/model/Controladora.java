@@ -9,7 +9,11 @@ public class Controladora {
 
 
 
-
+    /*
+     *
+     * el metodo imprime la lista de los minicuartos disponibles y calcula de cada una el valor mensual
+     *
+     */
     public void list(){
         double pagoMensual = 0;
         for (int i = 0; i < rooms.length; i++) {
@@ -22,12 +26,25 @@ public class Controladora {
                     }else{
                         pagoMensual = valor+(valor*0.25);
                     }
-                    System.out.println("Minirooms available: " + (i+1) + "," + (j+1) + " the monthly payment of the room is: $" + pagoMensual);
+                    System.out.println("Minirooms available: " + (i+1) + "," + (j+1) + " the monthly payment of the room " +
+                            "is: $" + pagoMensual);
                 }
             }
         }
     }
-
+    /*
+     *
+     * el metodo crea el miniroom con los servidores y la organizacion, además de que calcula el valor del pago mensual.
+     * @param integer x, ubicacion vertical en la matriz
+     * @param integer y, ubicacion horizontal en la matriz
+     * @param integer idNum, es el numero de identificacion del minicuarto
+     * @param String nit, nit de la empresa o numero de registro del proyecto
+     * @param String name, nombre de la empresa que alquila el minicuarto
+     * @param String[][] serverInfo, guarda la informacion de los servidores
+     * @param integer serverNum, numero de servidores que se van a poner en el rack
+     * @return String out, retorna la confirmación de la creacion del servicio más el alquiler mensual
+     *
+     */
     public String addMiniroom(int x, int y, int idNum, String nit, String name, String[][] serverInfo, int serverNum){
         String out = "";
         double pagoMensual;
@@ -55,7 +72,15 @@ public class Controladora {
 
         return out;
     }
-
+    /*
+     *
+     * el metodo crea el miniroom con los servidores y la organizacion, además de que calcula el valor del pago mensual.
+     * @param integer x, ubicacion vertical en la matriz
+     * @param integer y, ubicacion horizontal en la matriz
+     * @return String out, retorna la confirmacion de la eliminacion del servicio más la cantidad total de capacidad de
+     * los servidores del rack
+     *
+     */
     public String terminateOneMiniroom(int x, int y){
         String out = "";
         int out2 = 0, out3 = 0;
@@ -78,7 +103,14 @@ public class Controladora {
 
         return out;
     }
-
+    /*
+     *
+     * el metodo crea el miniroom con los servidores y la organizacion, además de que calcula el valor del pago mensual.
+     * @param String name, nombre de la empresa
+     * @return String out, retorna la confirmacion de la eliminacion del servicio más la cantidad total de capacidad de
+     * los servidores del rack
+     *
+     */
     public String terminateAllMinirooms(String name){
         String out = "";
         int out2 = 0, out3 = 0;
@@ -104,7 +136,11 @@ public class Controladora {
         out = "ram capacity was: " + out3 + "GB and hard drive capacity was: " + out2 + "Tb miniroom services succesfully terminated";
         return out;
     }
-
+    /*
+    *
+    * el metodo muestra un mapa de la sala con los minicuartos que estan alquilados y los que no
+    *
+     */
     public void mostrarMapa(){
 
         for (int i = 0; i < rooms.length; i++) {
@@ -119,6 +155,12 @@ public class Controladora {
         }
 
     }
+
+    /*
+     *
+     * el metodo simula el encendido de todos los minicuartos
+     *
+     */
     public void simulacionEncendido(){
         for (int i = 0; i < rooms.length; i++) {
             for (int j = 0; j < rooms[0].length; j++) {
@@ -127,7 +169,11 @@ public class Controladora {
             System.out.println("");
         }
     }
-
+    /*
+     *
+     * el metodo simula el apagado de todos los minicuartos de la primera fila y primera columna
+     *
+     */
     public void simularApagadoLetraL(){
         for (int i = 0; i < rooms.length; i++) {
             for (int j = 0; j < rooms[0].length; j++) {
@@ -143,6 +189,11 @@ public class Controladora {
         }
 
     }
+    /*
+     *
+     * el metodo simula el apagado de los minicuartos del primer y último corredor, junto con los minicuartos de la diagonal inversa
+     *
+     */
     public void simularApagadoLetraZ(){
         int cont = 7, temp = 0, temp2 = 1;
         for (int i = rooms.length; i >= 0; i--) {
@@ -166,7 +217,11 @@ public class Controladora {
         }
 
     }
-
+    /*
+     *
+     * el metodo simula el apagado de los minicuartos ubicados en los corredores impares
+     *
+     */
     public void simularApagadoLetraH(){
         for (int i = 0; i < rooms.length; i++) {
             for (int j = 0; j < rooms[0].length; j++) {
@@ -180,7 +235,11 @@ public class Controladora {
             System.out.println("");
         }
     }
-
+    /*
+     *
+     * el metodo simula el apagado los minicuartos ubicados en las ventanas
+     *
+     */
     public void simularApagadoLetraO(){
         for (int i = 0; i <= rooms.length; i++) {
             for (int j = 0; j <= rooms[0].length; j++) {
@@ -196,7 +255,11 @@ public class Controladora {
         }
 
     }
-
+    /*
+     *
+     * el metodo pregunta al usuario una columna N y  apaga todos los minicuartos en la columna N
+     *
+     */
     public void simularApagadoLetraM(int y){
         for (int i = 0; i < rooms.length; i++) {
             for (int j = 0; j < rooms[0].length; j++) {
@@ -210,7 +273,11 @@ public class Controladora {
 
         }
     }
-
+    /*
+     *
+     * el metodo pregunta al usuario un corredor N y  apaga todos los minicuartos en el corredor N
+     *
+     */
     public void simularApagadoLetraP(int x){
         for (int i = 0; i < rooms.length; i++) {
             for (int j = 0; j < rooms[0].length; j++) {

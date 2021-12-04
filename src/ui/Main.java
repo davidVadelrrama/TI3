@@ -114,16 +114,42 @@ public class Main{
 	 *
 	 */
 	public static void menu3(){
-		System.out.println("1. simulate turn off by letter L" +
-				"\n2. simulate turn off by letter Z" +
-				"\n3. simulate turn off by letter H" +
-				"\n4. simulate turn off by letter O" +
-				"\n5. simulate turn off by letter M" +
-				"\n6. simulate turn off by letter p");
-		int option = sc.nextInt();
-		switchMenu3(option);
+		System.out.println("Enter the letter of the simulation that you want to try" +
+				"\nSimulate turn off by letter L" +
+				"\nSimulate turn off by letter Z" +
+				"\nSimulate turn off by letter H" +
+				"\nSimulate turn off by letter O" +
+				"\nSimulate turn off by letter M" +
+				"\nSimulate turn off by letter P");
+		String option = sc.nextLine();
+		int option2 = 0;
+		if (option.equalsIgnoreCase("l")){
+			option2 = 1;
+		}
+		if (option.equalsIgnoreCase("z")){
+			option2 = 2;
+		}
+		if (option.equalsIgnoreCase("h")){
+			option2 = 3;
+		}
+		if (option.equalsIgnoreCase("o")){
+			option2 = 4;
+		}
+		if (option.equalsIgnoreCase("m")){
+			option2 = 5;
+		}
+		if (option.equalsIgnoreCase("p")){
+			option2 = 6;
+		}
+		switchMenu3(option2);
 	}
 
+	/*
+	 *
+	 * el metodo al pasarle un entero selecciona la opcion que quiere hacer el usuario.
+	 * @param option2, es la opcion del usuario
+	 *
+	 */
 	public static void switchMenu3(int option){
 		switch (option){
 			case 1:
@@ -150,7 +176,11 @@ public class Main{
 				break;
 		}
 	}
-
+	/*
+	 *
+	 * el metodo solo pide la informacion para crear un minicuarto
+	 *
+	 */
 	public static void addMiniroom(){
 		int cacheMem, processorNum, ramMem, cantHardDrive, hdMem;
 		String processorBrand;
