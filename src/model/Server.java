@@ -37,7 +37,6 @@ public class Server {
         this.processorNum = processorNum;
     }
 
-
     public int getCantRAM() {
         return cantRAM;
     }

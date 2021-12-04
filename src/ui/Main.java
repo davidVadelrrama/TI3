@@ -78,7 +78,12 @@ public class Main{
 
 		}
 	}
-
+	/*
+	 *
+	 * el metodo al pasarle un entero selecciona la opcion que quiere hacer el usuario.
+	 * @param option2, es la opcion del usuario
+	 *
+	 */
 	public static void switchMenu2(int option2){
 
 		switch (option2){
@@ -103,7 +108,11 @@ public class Main{
 				break;
 		}
 	}
-
+	/*
+	 *
+	 * el metodo solo muestra un menu
+	 *
+	 */
 	public static void menu3(){
 		System.out.println("1. simulate turn off by letter L" +
 				"\n2. simulate turn off by letter Z" +
@@ -124,13 +133,20 @@ public class Main{
 				controladora.simularApagadoLetraZ();
 				break;
 			case 3:
+				controladora.simularApagadoLetraH();
 				break;
 			case 4:
 				controladora.simularApagadoLetraO();
 				break;
 			case 5:
+				System.out.println("What column do you want to shut down");
+				int y = sc.nextInt();
+				controladora.simularApagadoLetraM(y);
 				break;
 			case 6:
+				System.out.println("What corridor do you want to shut down");
+				int x = sc.nextInt();
+				controladora.simularApagadoLetraP(x);
 				break;
 		}
 	}
@@ -174,7 +190,7 @@ public class Main{
 			serverInfo[4][i] = cantHardDrive + "";
 			serverInfo[5][i] = hdMem + "";
 		}
-		controladora.addMiniroom(x,y,idNum,nit,orgName,serverInfo);
+		System.out.println(controladora.addMiniroom(x,y,idNum,nit,orgName,serverInfo,serverNum));
 	}
 
 

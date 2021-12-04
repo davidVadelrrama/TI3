@@ -4,14 +4,18 @@ public class Miniroom {
 
     private int idNum;
     private Organization organization;
-    private static Server[] servers;
+    public static Server[] servers;
+    private int serverNum;
+    private double monthlyPayment;
 
 
 
 
-    public Miniroom(int idNum, Organization organization) {
+    public Miniroom(int idNum, Organization organization, int serverNum, double monthlyPayment) {
         this.idNum = idNum;
         this.organization = organization;
+        this.serverNum = serverNum;
+        this.monthlyPayment = monthlyPayment;
         servers = new Server[10];
     }
 
@@ -40,6 +44,21 @@ public class Miniroom {
         this.organization = organization;
     }
 
+    public int getServerNum() {
+        return serverNum;
+    }
+
+    public void setServerNum(int serverNum) {
+        this.serverNum = serverNum;
+    }
+
+    public double getMonthlyPayment() {
+        return monthlyPayment;
+    }
+
+    public void setMonthlyPayment(double monthlyPayment) {
+        this.monthlyPayment = monthlyPayment;
+    }
 
     public static void addServer(Server server){
         for (int i = 0; i < servers.length; i++) {
