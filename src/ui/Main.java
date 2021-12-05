@@ -121,6 +121,7 @@ public class Main{
 				"\nSimulate turn off by letter O" +
 				"\nSimulate turn off by letter M" +
 				"\nSimulate turn off by letter P");
+		sc.nextLine();
 		String option = sc.nextLine();
 		int option2 = 0;
 		if (option.equalsIgnoreCase("l")){
